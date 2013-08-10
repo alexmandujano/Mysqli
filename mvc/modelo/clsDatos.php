@@ -28,7 +28,7 @@
 
 	Public function ejecutar($sql){
 
-		$conexion->query($sql)
+		$conexion->query($sql);
 	}
 
 	public function cerrarconexion(){
