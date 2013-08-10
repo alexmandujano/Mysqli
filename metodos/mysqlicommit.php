@@ -1,4 +1,5 @@
 <?php
+// Realiza un "commit" de la transacción actual
 $mysqli = new mysqli("localhost", "root", "root", "world");
 
 /* comprueba la conexión */
@@ -17,10 +18,10 @@ $mysqli->query("INSERT INTO Language VALUES ('DEU', 'Bavarian', 'F', 11.2)");
 $mysqli->query("INSERT INTO Language VALUES ('DEU', 'Swabian', 'F', 9.4)");
 
 /* commit transaction */
-$mysqli->commit();
-
+$mysqli->rollback();
 /* Elimina la tabla */
-$mysqli->query("DROP TABLE Language");
+
+
 
 /* Cierra la conexión */
 $mysqli->close();
